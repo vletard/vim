@@ -32,8 +32,8 @@ nnoremap <c-]> <c-]>zz
 function! Refactor()
   let source = expand("<cword>")
   call inputsave()
-  let target = input("Replace with: ")
+  let target = input("> ")
   call inputrestore()
   execute '%s/\<' . source . '\>/' . target . '/gc'
 endfunction
-nnoremap r :call Refactor()<cr>
+nnoremap mm yiw :call Refactor()<cr>
